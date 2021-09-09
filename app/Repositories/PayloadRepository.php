@@ -7,9 +7,9 @@ class PayloadRepository
     /**
      * Returns a payload matching the ID passed in
      * @param int $id
-     * @return string
+     * @return string|null
      */
-    public function getPayload(int $id): string
+    public function getPayload(int $id): string | null
     {
         /**
          * return payload based on ID
@@ -144,6 +144,7 @@ class PayloadRepository
       }
    ]
 }',
+            default => null,
         };
     }
 

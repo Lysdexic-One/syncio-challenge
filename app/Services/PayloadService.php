@@ -17,7 +17,7 @@ class PayloadService
      * @param int $id
      * @return string
      */
-    #[Pure] public function getPayload(int $id): string
+    #[Pure] public function getPayload(int $id): string|null
     {
         /**
          * Ask repository for a payload
