@@ -19,6 +19,27 @@
 
         body {
             margin: 0
+
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
 
         a {
@@ -84,9 +105,6 @@
             display: grid
         }
 
-        .hidden {
-            display: none
-        }
 
         .items-center {
             align-items: center
@@ -100,17 +118,11 @@
             font-weight: 600
         }
 
-        .h-5 {
-            height: 1.25rem
-        }
 
         .h-8 {
             height: 2rem
         }
 
-        .h-16 {
-            height: 4rem
-        }
 
         .text-sm {
             font-size: .875rem
@@ -129,21 +141,11 @@
             margin-right: auto
         }
 
-        .ml-1 {
-            margin-left: .25rem
-        }
 
         .mt-2 {
             margin-top: .5rem
         }
 
-        .mr-2 {
-            margin-right: .5rem
-        }
-
-        .ml-2 {
-            margin-left: .5rem
-        }
 
         .mt-4 {
             margin-top: 1rem
@@ -161,12 +163,9 @@
             margin-left: 3rem
         }
 
-        .-mt-px {
-            margin-top: -1px
-        }
 
         .max-w-6xl {
-            max-width: 72rem
+            max-width: 95vw
         }
 
         .min-h-screen {
@@ -186,29 +185,58 @@
             padding-bottom: 1rem
         }
 
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .pt-8 {
-            padding-top: 2rem
-        }
-
-        .fixed {
-            position: fixed
-        }
 
         .relative {
             position: relative
         }
 
-        .top-0 {
-            top: 0
+
+        /**
+         * Classes to help style the page
+         */
+        .insert {
+            background: rgba(0, 128, 0, 0.65);
+            border: solid #006200 0.15em;
         }
 
-        .right-0 {
-            right: 0
+        .delete {
+            background: rgba(255, 0, 0, 0.65);
+            border: solid #ce0000 0.15em;
+            user-select: none;
+        }
+
+        .insert, .delete {
+            color: white;
+            padding: 0.5em;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .delete:hover, .insert:hover {
+            font-weight: bold;
+        }
+
+        .flexContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flexRow {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .lineNumber {
+            display: inline-block;
+            min-width: 2em;
+            user-select: none;
+            font-weight: bold;
+            margin-right: 1em;
+        }
+
+        .format {
+            white-space: pre-wrap;
+            overflow: auto;
         }
 
         .shadow {
@@ -219,23 +247,6 @@
             text-align: center
         }
 
-        .text-gray-200 {
-            --text-opacity: 1;
-            color: #edf2f7;
-            color: rgba(237, 242, 247, var(--text-opacity))
-        }
-
-        .text-gray-300 {
-            --text-opacity: 1;
-            color: #e2e8f0;
-            color: rgba(226, 232, 240, var(--text-opacity))
-        }
-
-        .text-gray-400 {
-            --text-opacity: 1;
-            color: #cbd5e0;
-            color: rgba(203, 213, 224, var(--text-opacity))
-        }
 
         .text-gray-500 {
             --text-opacity: 1;
@@ -249,11 +260,6 @@
             color: rgba(113, 128, 150, var(--text-opacity))
         }
 
-        .text-gray-700 {
-            --text-opacity: 1;
-            color: #4a5568;
-            color: rgba(74, 85, 104, var(--text-opacity))
-        }
 
         .text-gray-900 {
             --text-opacity: 1;
@@ -261,26 +267,17 @@
             color: rgba(26, 32, 44, var(--text-opacity))
         }
 
-        .underline {
-            text-decoration: underline
-        }
 
         .antialiased {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale
         }
 
-        .w-5 {
-            width: 1.25rem
-        }
 
         .w-8 {
             width: 2rem
         }
 
-        .w-auto {
-            width: auto
-        }
 
         .grid-cols-1 {
             grid-template-columns:repeat(1, minmax(0, 1fr))
@@ -291,25 +288,16 @@
                 border-radius: .5rem
             }
 
-            .sm\:block {
-                display: block
-            }
 
             .sm\:items-center {
                 align-items: center
             }
 
-            .sm\:justify-start {
-                justify-content: flex-start
-            }
 
             .sm\:justify-between {
                 justify-content: space-between
             }
 
-            .sm\:h-20 {
-                height: 5rem
-            }
 
             .sm\:ml-0 {
                 margin-left: 0
@@ -322,10 +310,6 @@
 
             .sm\:pt-0 {
                 padding-top: 0
-            }
-
-            .sm\:text-left {
-                text-align: left
             }
 
             .sm\:text-right {
@@ -384,12 +368,6 @@
                 color: #cbd5e0;
                 color: rgba(203, 213, 224, var(--text-opacity))
             }
-
-            .dark\:text-gray-500 {
-                --tw-text-opacity: 1;
-                color: #6b7280;
-                color: rgba(107, 114, 128, var(--tw-text-opacity))
-            }
         }
     </style>
     <style>
@@ -417,7 +395,7 @@
                     </div>
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            {!! nl2br($payload1) !!}
+                            <pre class="format">{{$payload1}}</pre>
                         </div>
                     </div>
                 </div>
@@ -434,7 +412,7 @@
 
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            {!! nl2br($payload2) !!}
+                            <pre class="format">{{$payload2}}</pre>
                         </div>
                     </div>
                 </div>
@@ -453,16 +431,36 @@
 
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            @foreach($diff as $char)
-                                @if($char[1] === \Fisharebest\Algorithm\MyersDiff::DELETE)
-                                    <p style="background: red;color: white">{{$loop->index}}: - {{$char[0]}}</p>
+                            <!-- Run a for each loop over the diff array check if its an insert, delete or keep.
+                            process results and display results according to type using classes implemented above -->
+                            @foreach($diff as $line)
+                                @if($line[1] === \Fisharebest\Algorithm\MyersDiff::DELETE)
+                                    <div class="flexContainer">
+                                        <div class="flexRow">
+                                            <p class="lineNumber">
+                                                - {{$loop->index}}:</p>
+                                            <pre class="delete format">{{$line[0]}}</pre>
+                                        </div>
+                                    </div>
                                     @continue
                                 @endif
-                                @if($char[1] === \Fisharebest\Algorithm\MyersDiff::INSERT)
-                                    <p style="background: green; color: white">{{$loop->index}}: + {{$char[0]}}</p>
+                                @if($line[1] === \Fisharebest\Algorithm\MyersDiff::INSERT)
+                                    <div class="flexContainer">
+                                        <div class="flexRow">
+                                            <p class="lineNumber">
+                                                + {{$loop->index}}:</p>
+                                            <pre class="insert format">{{$line[0]}}</pre>
+                                        </div>
+                                    </div>
                                     @continue
                                 @endif
-                                <p>{{$loop->index}}: {{$char[0]}}</p>
+                                <div class="flexContainer" >
+                                    <div class="flexRow">
+                                        <p class="lineNumber">
+                                            = {{$loop->index}}:</p>
+                                        <pre class="format">{{$line[0]}}</pre>
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                     </div>

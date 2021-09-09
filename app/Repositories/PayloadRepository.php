@@ -4,8 +4,16 @@ namespace App\Repositories;
 
 class PayloadRepository
 {
+    /**
+     * Returns a payload matching the ID passed in
+     * @param int $id
+     * @return string
+     */
     public function getPayload(int $id): string
     {
+        /**
+         * return payload based on ID
+         */
         return match ($id) {
             1 => '{
    "id":432232523,

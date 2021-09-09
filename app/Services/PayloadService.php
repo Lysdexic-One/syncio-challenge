@@ -12,21 +12,17 @@ class PayloadService
     {
     }
 
+    /**
+     * Takes a payload ID and returns matched payload from the repository
+     * @param int $id
+     * @return string
+     */
     #[Pure] public function getPayload(int $id): string
     {
+        /**
+         * Ask repository for a payload
+         */
         return $this->payloadRepository->getPayload($id);
     }
 
-    public function getDiff(string $payload1, $payload2): array
-    {
-        $algorithm = new MyersDiff;
-        $array1 = preg_split("/((\r?\n)|(\r\n?))/", $payload1);
-        $array2 = preg_split("/((\r?\n)|(\r\n?))/", $payload2);
-
-//        if (count($array1) < count($array2) ) {
-//            return $algorithm->calculate($array2, $array1);
-//        }
-
-        return $algorithm->calculate($array1, $array2);
-    }
 }
